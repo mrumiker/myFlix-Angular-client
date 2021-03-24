@@ -16,7 +16,7 @@ export class UserRegistrationService {
   }
 
   public UserRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    //console.log(userDetails);
     return this.http.post(apiUrl + 'users', userDetails).pipe(
       catchError(this.handleError)
     );
@@ -27,6 +27,7 @@ export class UserRegistrationService {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occured:', error.error.message);
     } else {
+      //console.log(error);
       console.error(
         `Error Status code ${error.status}, ` +
         `Error body is: ${error.error}`
@@ -49,7 +50,7 @@ export class UserLoginService {
   }
 
   public UserLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
+    //console.log(userDetails);
     return this.http.post(`${apiUrl}login`, userDetails).pipe(
       catchError(this.handleError)
     );
@@ -60,9 +61,10 @@ export class UserLoginService {
     if (error.error instanceof ErrorEvent) {
       console.error('Some error occured:', error.error.message);
     } else {
+      //console.log(error);
       console.error(
         `Error Status code ${error.status}, ` +
-        `Error body is: ${error.error}`
+        `Error body is: ${error.statusText}`
       );
     }
     return throwError(
