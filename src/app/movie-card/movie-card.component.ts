@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllMoviesService } from '../fetch-api-data.service'
+import { GetAllMoviesService } from '../fetch-api-data.service';
+import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,7 +10,10 @@ import { GetAllMoviesService } from '../fetch-api-data.service'
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
-  constructor(public fetchApiData: GetAllMoviesService) { }
+  constructor(
+    public fetchApiData: GetAllMoviesService,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.getMovies();
@@ -19,6 +24,12 @@ export class MovieCardComponent implements OnInit {
       this.movies = res;
       console.log(this.movies);
       return this.movies;
+    });
+  }
+
+  openSynopsis(): void {
+    this.dialog.open(SynopsisDialogComponent, {
+      width: '280px'
     });
   }
 }

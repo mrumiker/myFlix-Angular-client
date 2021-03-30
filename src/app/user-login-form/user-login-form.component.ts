@@ -22,10 +22,12 @@ export class UserLoginFormComponent implements OnInit {
 
   @Input() userData = { Username: '', Password: '' };
 
-  constructor(public fetchApiData: UserLoginService,
+  constructor(
+    public fetchApiData: UserLoginService,
     public dialogRef: MatDialogRef<UserLoginFormComponent>,
     public snackBar: MatSnackBar,
-    public router: Router) { }
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }
