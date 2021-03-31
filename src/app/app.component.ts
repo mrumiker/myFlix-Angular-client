@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myFlix-Angular-client';
+  username = localStorage.getItem('user');
 
   //constructor(public dialog: MatDialog) { }
 

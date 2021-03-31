@@ -1,1 +1,5 @@
 <p>user-profile works!</p>
+<h1>{{user.Username}}</h1>
+<ul *ngFor="let film of faves; let i = index">
+  <li>{{film.Title}}</li>
+</ul>

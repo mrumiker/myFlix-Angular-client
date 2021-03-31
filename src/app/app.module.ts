@@ -20,6 +20,8 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SynopsisDialogComponent } from './synopsis-dialog/synopsis-dialog.component';
+import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
+import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -36,7 +38,9 @@ const appRoutes: Routes = [
     MovieCardComponent,
     WelcomePageComponent,
     UserProfileComponent,
-    SynopsisDialogComponent
+    SynopsisDialogComponent,
+    DirectorDialogComponent,
+    GenreDialogComponent
   ],
   imports: [
     BrowserModule,

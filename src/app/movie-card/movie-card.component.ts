@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GetAllMoviesService } from '../fetch-api-data.service';
 import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
+import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
+import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -27,9 +29,25 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  openSynopsis(): void {
+  openSynopsis(title: string, description: string, imagepath: string): void {
     this.dialog.open(SynopsisDialogComponent, {
-      width: '280px'
+      width: '280px',
+      data: { title, description, imagepath }
     });
   }
+
+  openGenre(name: string, description: string): void {
+    this.dialog.open(GenreDialogComponent, {
+      width: '280px',
+      data: { name, description }
+    });
+  }
+
+  openDirector(name: string, bio: string): void {
+    this.dialog.open(DirectorDialogComponent, {
+      width: '280px',
+      data: { name, bio }
+    });
+  }
+
 }
