@@ -14,8 +14,9 @@
 </div>
 <div class="user-buttons">
 
-  <button class="update-profile" mat-raised-button color="primary">Update Profile</button>
-  <button class="update-profile" mat-raised-button color="warn">Delete Profile</button>
+  <button class="update-profile" mat-raised-button color="primary" (click)="openUpdateProfileDialog()">Update
+    Profile</button>
+  <button class="delete-profile" mat-raised-button color="warn" (click)="deleteUserProfile()">Delete Profile</button>
 
 
 </div>

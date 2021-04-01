@@ -22,6 +22,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { SynopsisDialogComponent } from './synopsis-dialog/synopsis-dialog.component';
 import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
 import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
+import { UpdateProfileDialogComponent } from './update-profile-dialog/update-profile-dialog.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     UserProfileComponent,
     SynopsisDialogComponent,
     DirectorDialogComponent,
-    GenreDialogComponent
+    GenreDialogComponent,
+    UpdateProfileDialogComponent
   ],
   imports: [
     BrowserModule,
