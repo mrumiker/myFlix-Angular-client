@@ -44,6 +44,15 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  deleteFavorite(MovieId: string): void {
+    this.fetchApiData3.deleteFavorite(MovieId).subscribe(() => {
+      this.snackbar.open('Movie Deleted from Favorites', 'OK', {
+        duration: 2000,
+      });
+    })
+    setTimeout(function () { window.location.reload() }, 2000);
+  }
+
   openUpdateProfileDialog(): void {
     this.dialog.open(UpdateProfileDialogComponent, {
       width: '280px'
