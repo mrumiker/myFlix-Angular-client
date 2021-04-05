@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { GetAllMoviesService } from '../fetch-api-data.service';
+import { GetAllMoviesService, AddFavoriteService, DeleteFavoriteService } from '../fetch-api-data.service';
 import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
 import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
 import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -15,7 +16,10 @@ export class MovieCardComponent implements OnInit {
   displayNav = true;
   constructor(
     public fetchApiData: GetAllMoviesService,
-    public dialog: MatDialog
+    public fetchApiData1: AddFavoriteService,
+    public fetchApiData2: DeleteFavoriteService,
+    public dialog: MatDialog,
+    public snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -49,6 +53,16 @@ export class MovieCardComponent implements OnInit {
       width: '280px',
       data: { name, bio }
     });
+  }
+
+  addFavorite(MovieId: string) {
+    this.fetchApiData1.addFavorite(MovieId).subscribe((res) => {
+      console.log(res);
+      this.snackbar.open('Movie Added to Favorites', 'OK', {
+        duration: 2000
+      });
+    });
+
   }
 
 }

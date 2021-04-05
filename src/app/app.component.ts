@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 //import { MovieCardComponent } from './movie-card/movie-card.component';
 //import { MatDialog } from '@angular/material/dialog';
@@ -12,7 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'myFlix-Angular-client';
 
-  constructor(public router: Router) { }
+  constructor() { }
 
   //function to open dialog for movies display
   // openMoviesDialog(): void {

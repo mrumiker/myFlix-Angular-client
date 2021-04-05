@@ -17,7 +17,9 @@
       <button mat-button color="primary" (click)="openSynopsis(movie.Title, movie.Description, movie.ImagePath)">
         Synopsis
       </button>
-      <mat-icon>favorite_border</mat-icon>
+      <button mat-icon-button (click)="addFavorite(movie._id)">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
