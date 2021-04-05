@@ -28,7 +28,7 @@ export class UpdateProfileDialogComponent implements OnInit {
         duration: 2000,
       });
       localStorage.setItem('user', this.userData.Username);
-      window.location.reload();
+      setTimeout(function () { window.location.reload() }, 2000);
     },
     )
   }

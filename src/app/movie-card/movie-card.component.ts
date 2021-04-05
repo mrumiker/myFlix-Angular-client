@@ -12,6 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class MovieCardComponent implements OnInit {
   movies: any[] = [];
+  displayNav = true;
   constructor(
     public fetchApiData: GetAllMoviesService,
     public dialog: MatDialog

@@ -295,9 +295,10 @@
   }
 </style>
 
-<nav>
+<nav *ngIf="displayNav">
   <ul>
     <li><a routerLink="/user" routerLinkActive="active">{{username}}</a></li>
+    <li><a (click)="logOut()">Logout</a></li>
   </ul>
 </nav>
 

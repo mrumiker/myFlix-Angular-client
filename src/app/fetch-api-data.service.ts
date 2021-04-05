@@ -421,7 +421,8 @@ export class DeleteUserService {
     return this.http.delete(`${apiUrl}users/delete/${user}`, {
       headers: new HttpHeaders({
         Authorization: `Bearer ${token}`,
-      })
+      }),
+      responseType: 'text',
     }).pipe(
       map(this.extractResponseData),
       catchError(this.handleError)
@@ -441,7 +442,6 @@ export class DeleteUserService {
         `Error Status code ${error.status}, ` +
         `Error body is: ${error.error}`
       );
-
     }
     return throwError(
       'Sorry, user could not be deleted.');
