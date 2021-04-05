@@ -60,14 +60,18 @@ export class UserProfileComponent implements OnInit {
   }
 
   deleteUserProfile(): void {
-    this.fetchApiData4.deleteUser().subscribe(() => {
-      console.log('Profile Deleted')
-      localStorage.clear();
-      this.router.navigate(['welcome']);
-      this.snackbar.open('Profile Deleted', 'OK', {
-        duration: 2000
+    let ok = confirm("Are you sure you want to delete your profile?\nThis action cannot be undone.");
+    if (ok) {
+      this.fetchApiData4.deleteUser().subscribe(() => {
+        console.log('Profile Deleted')
+        localStorage.clear();
+        this.router.navigate(['welcome']);
+        this.snackbar.open('Profile Deleted', 'OK', {
+          duration: 2000
+        });
       });
-    });
+    } else {
+      window.location.reload();
+    }
   }
-
 }

@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 
-<h1>{{user.Username}}</h1>
-<h2>Favorite Movies</h2>
+<h1 style="padding: 20px">{{user.Username}}</h1>
+<h2 style="padding: 20px">Favorite Movies</h2>
 <div style="display: flex;">
   <mat-card *ngFor="let movie of faves;" style="flex: 1 1 auto;">
     <mat-card-header>
@@ -16,11 +16,13 @@
     </mat-card-actions>
   </mat-card>
 </div>
-<div class="user-buttons">
+<div class="user-buttons" style="display: flex; justify-content: flex-end;">
 
-  <button class="update-profile" mat-raised-button color="primary" (click)="openUpdateProfileDialog()">Update
+  <button class="update-profile" mat-raised-button style="margin: 10px" color="primary"
+    (click)="openUpdateProfileDialog()">Update
     Profile</button>
-  <button class="delete-profile" mat-raised-button color="warn" (click)="deleteUserProfile()">Delete Profile</button>
+  <button class="delete-profile" mat-raised-button style="margin: 10px" color="warn"
+    (click)="deleteUserProfile()">Delete Profile</button>
 
 
 </div>
