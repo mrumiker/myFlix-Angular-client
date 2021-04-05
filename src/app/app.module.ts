@@ -23,6 +23,7 @@ import { SynopsisDialogComponent } from './synopsis-dialog/synopsis-dialog.compo
 import { DirectorDialogComponent } from './director-dialog/director-dialog.component';
 import { GenreDialogComponent } from './genre-dialog/genre-dialog.component';
 import { UpdateProfileDialogComponent } from './update-profile-dialog/update-profile-dialog.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     SynopsisDialogComponent,
     DirectorDialogComponent,
     GenreDialogComponent,
-    UpdateProfileDialogComponent
+    UpdateProfileDialogComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

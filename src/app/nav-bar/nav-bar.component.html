@@ -1,0 +1,23 @@
+<div id="navbar">
+
+  <div class="nav-container" style="display: flex; justify-content: space-between;">
+
+    <button mat-button color="primary" routerLink="/movies" class="app-title">
+      myFlix
+    </button>
+
+    <div class="nav-links" style="justify-content: flex-end;">
+
+      <button mat-button color="basic" routerLink="/user" class="profile">
+        {{username}}
+      </button>
+
+      <button mat-button color="basic" class="logout" (click)="logOut()" routerLink="/">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
