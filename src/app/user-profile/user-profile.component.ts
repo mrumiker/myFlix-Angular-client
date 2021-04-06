@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GetUserService, UpdateUserService, DeleteFavoriteService, DeleteUserService, GetAllMoviesService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
@@ -46,11 +46,11 @@ export class UserProfileComponent implements OnInit {
 
   deleteFavorite(MovieId: string): void {
     this.fetchApiData3.deleteFavorite(MovieId).subscribe(() => {
+      setTimeout(function () { window.location.reload() }, 1000);
       this.snackbar.open('Movie Deleted from Favorites', 'OK', {
-        duration: 2000,
+        duration: 1000,
       });
     })
-    setTimeout(function () { window.location.reload() }, 2000);
   }
 
   openUpdateProfileDialog(): void {
