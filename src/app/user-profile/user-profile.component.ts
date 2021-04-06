@@ -4,6 +4,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateProfileDialogComponent } from '../update-profile-dialog/update-profile-dialog.component';
 import { Router } from '@angular/router';
+import { SynopsisDialogComponent } from '../synopsis-dialog/synopsis-dialog.component';
+import { GenreDialogComponent } from '../genre-dialog/genre-dialog.component';
+import { DirectorDialogComponent } from '../director-dialog/director-dialog.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -32,7 +35,6 @@ export class UserProfileComponent implements OnInit {
     this.fetchApiData1.getUser().subscribe((res: any) => {
       this.user = res;
       this.getFaves(res.Favorites);
-      console.log(this.user);
       return this.user;
     });
   }
@@ -40,15 +42,14 @@ export class UserProfileComponent implements OnInit {
   getFaves(faves: string[]): void {
     this.fetchApiData5.getAllMovies().subscribe((res: any) => {
       this.faves = res.filter((x: any) => faves.includes(x._id));
-      console.log(this.faves)
     });
   }
 
   deleteFavorite(MovieId: string): void {
     this.fetchApiData3.deleteFavorite(MovieId).subscribe(() => {
-      setTimeout(function () { window.location.reload() }, 1000);
+      setTimeout(function () { window.location.reload() }, 500);
       this.snackbar.open('Movie Deleted from Favorites', 'OK', {
-        duration: 1000,
+        duration: 500,
       });
     })
   }
@@ -56,6 +57,27 @@ export class UserProfileComponent implements OnInit {
   openUpdateProfileDialog(): void {
     this.dialog.open(UpdateProfileDialogComponent, {
       width: '280px'
+    });
+  }
+
+  openSynopsis(title: string, description: string, imagepath: string): void {
+    this.dialog.open(SynopsisDialogComponent, {
+      width: '280px',
+      data: { title, description, imagepath }
+    });
+  }
+
+  openGenre(name: string, description: string): void {
+    this.dialog.open(GenreDialogComponent, {
+      width: '280px',
+      data: { name, description }
+    });
+  }
+
+  openDirector(name: string, bio: string): void {
+    this.dialog.open(DirectorDialogComponent, {
+      width: '280px',
+      data: { name, bio }
     });
   }
 
