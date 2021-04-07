@@ -66,20 +66,21 @@ export class MovieCardComponent implements OnInit {
 
   addFavorite(MovieId: string) {
     this.fetchApiData1.addFavorite(MovieId).subscribe(() => {
-      setTimeout(function () { window.location.reload() }, 500);
       this.snackbar.open('Movie Added to Favorites', 'OK', {
         duration: 500
       });
     });
+    this.faves.push(MovieId);
   }
 
   deleteFavorite(MovieId: string): void {
     this.fetchApiData2.deleteFavorite(MovieId).subscribe(() => {
-      setTimeout(function () { window.location.reload() }, 500);
+      //setTimeout(function () { window.location.reload() }, 500);
       this.snackbar.open('Movie Deleted from Favorites', 'OK', {
         duration: 500,
       });
-    })
+    });
+    this.faves.splice(this.faves.indexOf(MovieId), 1);
   }
 
   displayFavesButton(MovieId: string) { //determine whether 'Add to' or 'Delete from Favorites button displayed'
