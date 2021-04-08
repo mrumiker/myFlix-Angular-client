@@ -41,17 +41,17 @@ export class UserProfileComponent implements OnInit {
 
   getFaves(faves: string[]): void {
     this.fetchApiData5.getAllMovies().subscribe((res: any) => {
-      this.faves = res.filter((x: any) => faves.includes(x._id));
+      this.faves = res.filter((movie: any) => faves.includes(movie._id));
     });
   }
 
   deleteFavorite(MovieId: string): void {
     this.fetchApiData3.deleteFavorite(MovieId).subscribe(() => {
-      setTimeout(function () { window.location.reload() }, 500);
       this.snackbar.open('Movie Deleted from Favorites', 'OK', {
-        duration: 500,
+        duration: 1000,
       });
-    })
+    });
+    this.faves = this.faves.filter((movie: any) => movie._id !== MovieId);
   }
 
   openUpdateProfileDialog(): void {
