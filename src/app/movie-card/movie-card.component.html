@@ -18,18 +18,21 @@
         Synopsis
       </button>
 
-      <button *ngIf="displayFavesButton(movie._id); else addFave" mat-icon-button color="warn"
-        (click)="deleteFavorite(movie._id)" matTooltip="Delete {{movie.Title}} from your Favorites"
-        matTooltipPosition="right">
+      <button *ngIf="displayFavesButton(movie._id);" mat-icon-button color="warn" (click)="deleteFavorite(movie._id)"
+        matTooltip="Delete {{movie.Title}} from your Favorites" matTooltipPosition="right">
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button *ngIf="!displayFavesButton(movie._id);" mat-icon-button (click)="addFavorite(movie._id)"
+        matTooltip="Add {{movie.Title}} to your Favorites" matTooltipPosition="right">
         <mat-icon>favorite_border</mat-icon>
       </button>
 
-      <ng-template #addFave>
+      <!-- <ng-template #addFave>
         <button mat-icon-button (click)="addFavorite(movie._id)" matTooltip="Add {{movie.Title}} to your Favorites"
           matTooltipPosition="right">
           <mat-icon>favorite_border</mat-icon>
         </button>
-      </ng-template>
+      </ng-template> -->
 
     </mat-card-actions>
   </mat-card>
