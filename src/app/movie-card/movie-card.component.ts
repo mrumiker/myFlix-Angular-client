@@ -57,10 +57,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  openDirector(name: string, bio: string): void {
+  openDirector(name: string, bio: string, birth: string, death: string): void {
     this.dialog.open(DirectorDialogComponent, {
       width: '280px',
-      data: { name, bio }
+      data: { name, bio, birth, death }
     });
   }
 

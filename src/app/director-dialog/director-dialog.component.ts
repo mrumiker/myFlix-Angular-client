@@ -10,7 +10,7 @@ export class DirectorDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA)
-    public data: { name: string; bio: string; },
+    public data: { name: string; bio: string; birth: string; death: string; },
   ) { }
 
   ngOnInit(): void {
