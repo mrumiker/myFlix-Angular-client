@@ -21,6 +21,11 @@ export class UpdateProfileDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * updateUser() takes the data entered by the user and overwrites the info in the database
+   * user name is set in local storage in case it has been changed
+   */
+
   updateUser(): void {
     this.fetchApiData.updateUser(this.userData).subscribe((res) => {
       this.dialogRef.close();

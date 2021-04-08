@@ -32,6 +32,12 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * logUserIn() sends the user's credentials to the database. 
+   * If authentication is successful, username and token are returned and put in local storage
+   * App naviagates to the Main movies view
+   */
+
   logUserIn(): void {
     this.fetchApiData.UserLogin(this.userData).subscribe((result) => {
       this.dialogRef.close(); //closes modal on success
