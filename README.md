@@ -1,3 +1,19 @@
+# myFlix-Angular-client
+
+![MyFlix Angular](/img/MyFlixSS.png)
+
+Client side of myFlix movie lookup app.
+
+This **single page app** lets YOU look up movies, get the most in-demand information, save your favorites, and keep coming back for more.
+
+This is the client side of a full stack **MEAN** project.
+
+## Try it
+
+https://mrumiker.github.io/myFlix-Angular-client
+
+The back end code for this project can be found at [flix-lookup-app](https://github.com/mrumiker/flix-lookup-app).
+
 # MyFlixAngularClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
