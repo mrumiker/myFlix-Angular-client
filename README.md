@@ -8,7 +8,7 @@ This **single page app** lets YOU look up movies, get the most in-demand informa
 
 This is the client side of a full stack **MEAN** project.
 
-## Try it
+## Try myFlix
 
 https://mrumiker.github.io/myFlix-Angular-client
 
