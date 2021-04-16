@@ -2,8 +2,8 @@
 Buttons to update User Profile and Delete Account are provided -->
 <app-nav-bar></app-nav-bar>
 
-<h1 style="padding: 0 20px">{{user.Username}}</h1>
-<h2 style="padding: 0 20px">Favorite Movies</h2>
+<h1 style="padding: 0 20px; margin-top: 40px; font-weight: bold; letter-spacing: 3px;">{{user.Username}}</h1>
+<h2 style="padding: 0 20px;">Favorite Movies</h2>
 <h3 *ngIf="!this.faves.length" style="padding: 0 20px">You haven't added any favorites!</h3>
 <div style="display: flex;">
   <mat-card *ngFor="let movie of faves;" style="flex: 1 1 auto;">
@@ -30,7 +30,7 @@ Buttons to update User Profile and Delete Account are provided -->
     </mat-card-actions>
   </mat-card>
 </div>
-<div class="user-buttons" style="display: flex; justify-content: flex-end;">
+<div class="user-buttons" style="text-align: right;">
 
   <button class="update-profile" mat-raised-button style="margin: 10px" color="primary"
     (click)="openUpdateProfileDialog()">Update

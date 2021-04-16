@@ -1,7 +1,7 @@
 <!-- The Main View of the app. Movie cards show Title, Director, and Movie poster, with links for more information and Button to add movie to user's favorites -->
 <app-nav-bar></app-nav-bar>
 
-<div style="display: flex;">
+<div style="display: flex; margin-top: 40px;">
   <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
     <mat-card-header>
       <mat-card-title>{{movie.Title}}</mat-card-title>
