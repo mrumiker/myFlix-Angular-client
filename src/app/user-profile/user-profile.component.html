@@ -6,7 +6,7 @@ Buttons to update User Profile and Delete Account are provided -->
 <h2 style="padding: 0 20px;">Favorite Movies</h2>
 <h3 *ngIf="!this.faves.length" style="padding: 0 20px">You haven't added any favorites!</h3>
 <div style="display: flex;">
-  <mat-card *ngFor="let movie of faves;" style="flex: 1 1 auto;">
+  <mat-card *ngFor="let movie of faves;" style="flex: 1 1 auto; z-index: -1;">
     <mat-card-header>
       <mat-card-title>{{movie.Title}}</mat-card-title>
       <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
