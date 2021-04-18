@@ -30,13 +30,15 @@ Buttons to update User Profile and Delete Account are provided -->
     </mat-card-actions>
   </mat-card>
 </div>
-<div class="user-buttons" style="text-align: right;">
+<div class="footer" style="display: flex;">
+  <div class="user-buttons">
 
-  <button class="update-profile" mat-raised-button style="margin: 10px" color="primary"
-    (click)="openUpdateProfileDialog()">Update
-    Profile</button>
-  <button class="delete-profile" mat-raised-button style="margin: 10px" color="warn"
-    (click)="deleteUserProfile()">Delete Profile</button>
+    <button class="update-profile" mat-raised-button style="margin: 10px" color="primary"
+      (click)="openUpdateProfileDialog()">Update
+      Profile</button>
+    <button class="delete-profile" mat-raised-button style="margin: 10px" color="warn"
+      (click)="deleteUserProfile()">Delete Profile</button>
 
 
+  </div>
 </div>
